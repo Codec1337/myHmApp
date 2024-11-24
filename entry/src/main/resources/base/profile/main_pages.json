@@ -7,6 +7,7 @@
     "pages/01/EventPage",
     "pages/01/StateCase",
     "pages/02/ImageCase",
-    "pages/02/CommentCase"
+    "pages/02/CommentCase",
+    "pages/02/StyleCase01"
   ]
 }
