@@ -5,7 +5,7 @@ import { AppNavBar, CommentItem } from './components'
 struct CommentsCase {
   build() {
     Column() {
-      AppNavBar()
+      AppNavBar({ title: "评论回复" })
       CommentItem()
       Divider()
         .strokeWidth(2)
