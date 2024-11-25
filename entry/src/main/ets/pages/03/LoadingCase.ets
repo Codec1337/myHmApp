@@ -4,10 +4,27 @@ import { MyAppLoading } from "./components/myAppLoading"
 @Component
 struct LoadingCase {
 
+  @State showLoading: boolean = false
+
+  timeoutTimerId: number = -1
+
+  aboutToAppear(): void {
+    this.showLoading = true
+    this.timeoutTimerId = setTimeout(() => {
+      this.showLoading = false
+    }, 3000)
+  }
+
+  aboutToDisappear(): void {
+    clearTimeout(this.timeoutTimerId)
+  }
+
   build() {
     Row() {
       Column() {
-        MyAppLoading()
+        if (this.showLoading) {
+          MyAppLoading()
+        }
       }
       .width('100%')
     }
