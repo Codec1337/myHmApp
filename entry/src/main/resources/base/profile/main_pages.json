@@ -19,6 +19,7 @@
     "pages/03/StackCase",
     "pages/03/LoadingCase",
     "pages/03/ForEachCase",
-    "pages/03/ForEachGridCase"
+    "pages/03/ForEachGridCase",
+    "pages/Comments/CommentsCase"
   ]
 }
