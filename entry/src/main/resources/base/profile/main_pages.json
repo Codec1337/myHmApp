@@ -18,6 +18,7 @@
     "pages/03/LoginFormCase",
     "pages/03/StackCase",
     "pages/03/LoadingCase",
-    "pages/03/ForEachCase"
+    "pages/03/ForEachCase",
+    "pages/03/ForEachGridCase"
   ]
 }
