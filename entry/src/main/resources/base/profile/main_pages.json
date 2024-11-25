@@ -14,6 +14,7 @@
     "pages/02/GridCase",
     "pages/03/ScrollCase01",
     "pages/03/ScrollCase02",
-    "pages/03/MvvmCase"
+    "pages/03/MvvmCase",
+    "pages/03/LoginFormCase"
   ]
 }

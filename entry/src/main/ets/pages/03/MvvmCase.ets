@@ -17,6 +17,7 @@ struct MvvmCase {
             this.isSelected = value
           })
         Text(`${this.isSelected}`)
+
       }
       .width('100%')
     }
