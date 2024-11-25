@@ -7,9 +7,9 @@ struct LoginFormCase {
     age: 20,
     gender: "男",
     address: {
-      province: "河南省",
-      city: "开封市",
-      area: "杞县"
+      province: "xxx",
+      city: "xxx",
+      area: "xx"
     }
   })
 
