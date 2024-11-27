@@ -115,7 +115,7 @@ struct CommentsCase {
             CommentItem({
               commentItem: item,
               changeLike: () => {
-                this.changeLike(item)
+                this.changeLike(item, "bottom")
               }
             })
           }
