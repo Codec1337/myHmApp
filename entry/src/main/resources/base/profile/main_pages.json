@@ -20,6 +20,8 @@
     "pages/03/LoadingCase",
     "pages/03/ForEachCase",
     "pages/03/ForEachGridCase",
-    "pages/Comments/CommentsCase"
+    "pages/Comments/CommentsCase",
+    "pages/04/BuilderCase",
+    "pages/05/BuilderParamCase"
   ]
 }
