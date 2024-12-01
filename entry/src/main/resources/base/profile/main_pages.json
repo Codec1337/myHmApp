@@ -25,6 +25,8 @@
     "pages/05/BuilderParamCase",
     "pages/06/CustomDialogCase",
     "pages/07/SwiperCase",
-    "pages/07/CartCase"
+    "pages/07/CartCase",
+    "pages/07/ProvideLoginCase",
+    "pages/07/ProvideHomeCase"
   ]
 }
