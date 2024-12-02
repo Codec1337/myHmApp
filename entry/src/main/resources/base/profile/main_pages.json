@@ -28,6 +28,8 @@
     "pages/07/CartCase",
     "pages/07/ProvideLoginCase",
     "pages/07/ProvideHomeCase",
-    "pages/07/ObserveCase"
+    "pages/07/ObserveCase",
+    "pages/08/LocalStorageCase",
+    "pages/08/LocalStorageCaseB"
   ]
 }
