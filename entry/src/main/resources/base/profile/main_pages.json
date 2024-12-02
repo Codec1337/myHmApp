@@ -32,6 +32,7 @@
     "pages/08/LocalStorageCase",
     "pages/08/LocalStorageCaseB",
     "pages/08/preferencesCase/PreferencesLoginCase",
-    "pages/08/preferencesCase/PerferencesHomeCase"
+    "pages/08/preferencesCase/PerferencesHomeCase",
+    "pages/08/HttpCase"
   ]
 }
