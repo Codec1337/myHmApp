@@ -12,7 +12,7 @@ struct MTIndex {
           MTTopCase()
           MTMainCase()
         }.height("100%")
-        .backgroundColor(Color.Pink)
+        // .backgroundColor(Color.Pink)
         .width("100%")
         MTBottomCase()
       }.layoutWeight(1)
