@@ -1,10 +1,12 @@
+import { CategoryModel, FoodItemModel } from '../models/MTModelIndex';
 import FoodItem from './FoodItem';
 
 @Preview
 @Component
 struct MTMainCase {
 
-  leftList: string[] = ["一人套餐", "特色烧烤", "杂粮主食"]
+  @Prop
+  leftList: CategoryModel[] = []
 
   @State
   selectLeftIndex: number = 0;
@@ -12,8 +14,8 @@ struct MTMainCase {
   build() {
     Row() {
       Column() {
-        ForEach(this.leftList, (item: string, index: number) => {
-          Text(item)
+        ForEach(this.leftList, (item: CategoryModel, index: number) => {
+          Text(item.name)
             .height(60)
             .fontSize(14)
             .backgroundColor(this.selectLeftIndex === index ? $r("app.color.white") : $r("app.color.left_back_color"))
@@ -27,9 +29,9 @@ struct MTMainCase {
       .backgroundColor($r("app.color.left_back_color"))
       .height("100%")
       List({ space: 0 }) {
-        ForEach(new Array(10).fill(1), () => {
+        ForEach(this.leftList[this.selectLeftIndex]?.foods, (foodItem: FoodItemModel) => {
           ListItem() {
-            FoodItem()
+            FoodItem({ item: foodItem })
           }
         })
       }.layoutWeight(1)
