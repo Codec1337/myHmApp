@@ -1,4 +1,5 @@
 import { FoodItemModel } from '../models/MTModelIndex'
+import MTAddOrCut from './MTAddOrCut'
 
 @Preview
 @Component
@@ -47,15 +48,19 @@ struct FoodItem {
             .fontSize(10)
         }
 
-        Text() {
-          Span("￥")
-            .fontSize(10)
-            .fontColor($r("app.color.font_main_color"))
+        Row() {
+          Text() {
+            Span("￥")
+              .fontSize(10)
+              .fontColor($r("app.color.font_main_color"))
 
-          Span(this.item.price.toString())
-            .fontSize(18)
-            .fontColor($r("app.color.font_main_color"))
-        }
+            Span(this.item.price.toString())
+              .fontSize(18)
+              .fontColor($r("app.color.font_main_color"))
+          }
+          MTAddOrCut()
+        }.width("100%")
+        .justifyContent(FlexAlign.SpaceBetween)
       }.layoutWeight(1)
       .alignItems(HorizontalAlign.Start)
       .padding({
