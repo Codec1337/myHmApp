@@ -1,3 +1,5 @@
+import FoodItem from './FoodItem';
+
 @Preview
 @Component
 struct MTMainCase {
@@ -23,6 +25,17 @@ struct MTMainCase {
         })
       }.width(100)
       .backgroundColor($r("app.color.left_back_color"))
+      .height("100%")
+      List({ space: 0 }) {
+        ForEach(new Array(10).fill(1), () => {
+          ListItem() {
+            FoodItem()
+          }
+        })
+      }.layoutWeight(1)
+      .padding({
+        bottom: 130
+      })
       .height("100%")
     }.height("100%")
     .width("100%")
