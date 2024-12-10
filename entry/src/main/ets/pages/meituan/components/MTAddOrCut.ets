@@ -1,10 +1,22 @@
+import { FoodItemModel } from '../models/MTModelIndex'
+
 @Preview
 @Component
 struct MTAddOrCut {
 
+  @Prop
+  fid: number = -1
+
   @Styles ImageStyle() {
     .width("100%")
     .aspectRatio(1)
+  }
+
+  @Consume
+  userCart: FoodItemModel[]
+
+  getFoodCount() {
+    return this.userCart.find(item => item.id === this.fid)?.count || 0
   }
 
   build() {
@@ -20,7 +32,9 @@ struct MTAddOrCut {
       .aspectRatio(1)
       .justifyContent(FlexAlign.Center)
       .borderRadius(4)
-      Text("0")
+      .visibility(this.getFoodCount() ? Visibility.Visible : Visibility.Hidden)
+      Text(this.getFoodCount().toString())
+        .visibility(this.getFoodCount() ? Visibility.Visible : Visibility.Hidden)
       Row() {
         Image($r("app.media.ic_public_add_filled"))
           .ImageStyle()

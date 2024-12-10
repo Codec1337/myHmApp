@@ -58,7 +58,7 @@ struct FoodItem {
               .fontSize(18)
               .fontColor($r("app.color.font_main_color"))
           }
-          MTAddOrCut()
+          MTAddOrCut({ fid: this.item.id })
         }.width("100%")
         .justifyContent(FlexAlign.SpaceBetween)
       }.layoutWeight(1)

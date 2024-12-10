@@ -4,6 +4,7 @@ import MTCart from './components/MTCart'
 import MTMainCase from './components/MTMain'
 import MTTopCase from './components/MTTop'
 import { CategoryModel, FoodItemModel } from './models/MTModelIndex'
+import { CartStore } from './utils'
 
 @Entry
 @Component
@@ -11,6 +12,9 @@ struct MTIndex {
 
   @Provide
   showCart: boolean = false
+
+  @Provide
+  userCart: FoodItemModel[] = []
 
   @State
   leftList: CategoryModel[] = []
@@ -22,6 +26,7 @@ struct MTIndex {
 
   aboutToAppear(): void {
     this.getFoodsData()
+    this.userCart = CartStore.getUserCart()
   }
 
   build() {
