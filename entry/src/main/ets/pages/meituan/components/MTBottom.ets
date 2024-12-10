@@ -1,6 +1,10 @@
 @Preview
 @Component
 struct MTBottomCase {
+
+  @Consume
+  showCart: boolean
+
   build() {
     Row() {
       Row() {
@@ -20,6 +24,9 @@ struct MTBottomCase {
             })
         }.margin({
           left: 30
+        })
+        .onClick(() => {
+          this.showCart = !this.showCart
         })
         Column() {
           Text() {
