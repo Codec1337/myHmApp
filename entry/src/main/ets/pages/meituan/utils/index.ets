@@ -2,6 +2,8 @@ import { FoodItemModel } from '../models/MTModelIndex'
 
 export const USER_CART = "user_cart"
 
+export const USER_CART_CHANGE = "user_cart_change"
+
 PersistentStorage.persistProp(USER_CART, [])
 
 export class CartStore {
@@ -31,6 +33,7 @@ export class CartStore {
     }
 
     AppStorage.set(USER_CART, [ ...userCart ])
+    getContext().eventHub.emit(USER_CART_CHANGE)
 
   }
 }

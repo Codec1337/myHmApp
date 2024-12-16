@@ -4,7 +4,7 @@ import MTCart from './components/MTCart'
 import MTMainCase from './components/MTMain'
 import MTTopCase from './components/MTTop'
 import { CategoryModel, FoodItemModel } from './models/MTModelIndex'
-import { CartStore, USER_CART } from './utils'
+import { CartStore, USER_CART, USER_CART_CHANGE } from './utils'
 
 @Entry
 @Component
@@ -21,7 +21,7 @@ struct MTIndex {
   userCartData: FoodItemModel[] = []
 
   userCartDataChange() {
-    this.userCart = CartStore.getUserCart()
+    // this.userCart = CartStore.getUserCart()
   }
 
   @State
@@ -36,6 +36,9 @@ struct MTIndex {
   aboutToAppear(): void {
     this.getFoodsData()
     this.userCart = CartStore.getUserCart()
+    getContext().eventHub.on(USER_CART_CHANGE, () => {
+      this.userCart = CartStore.getUserCart()
+    })
   }
 
   build() {
