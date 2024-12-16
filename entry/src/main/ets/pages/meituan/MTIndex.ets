@@ -4,7 +4,7 @@ import MTCart from './components/MTCart'
 import MTMainCase from './components/MTMain'
 import MTTopCase from './components/MTTop'
 import { CategoryModel, FoodItemModel } from './models/MTModelIndex'
-import { CartStore } from './utils'
+import { CartStore, USER_CART } from './utils'
 
 @Entry
 @Component
@@ -16,8 +16,17 @@ struct MTIndex {
   @Provide
   userCart: FoodItemModel[] = []
 
+  @StorageProp(USER_CART)
+  @Watch("userCartDataChange")
+  userCartData: FoodItemModel[] = []
+
+  userCartDataChange() {
+    this.userCart = CartStore.getUserCart()
+  }
+
   @State
   leftList: CategoryModel[] = []
+
 
   async getFoodsData() {
     const res: CategoryModel[] = await getFoodList()

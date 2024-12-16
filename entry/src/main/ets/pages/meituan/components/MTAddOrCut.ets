@@ -1,4 +1,5 @@
 import { FoodItemModel } from '../models/MTModelIndex'
+import { AddOrCutEnum, CartStore } from '../utils'
 
 @Preview
 @Component
@@ -6,6 +7,9 @@ struct MTAddOrCut {
 
   @Prop
   fid: number = -1
+
+  @Prop
+  foodItem: FoodItemModel = new FoodItemModel()
 
   @Styles ImageStyle() {
     .width("100%")
@@ -33,6 +37,9 @@ struct MTAddOrCut {
       .justifyContent(FlexAlign.Center)
       .borderRadius(4)
       .visibility(this.getFoodCount() ? Visibility.Visible : Visibility.Hidden)
+      .onClick(() => {
+        CartStore.addOrCutCart(AddOrCutEnum.CUT, this.foodItem)
+      })
       Text(this.getFoodCount().toString())
         .visibility(this.getFoodCount() ? Visibility.Visible : Visibility.Hidden)
       Row() {
@@ -47,6 +54,9 @@ struct MTAddOrCut {
       .justifyContent(FlexAlign.Center)
       .backgroundColor($r("app.color.main_color"))
       .borderRadius(4)
+      .onClick(() => {
+        CartStore.addOrCutCart(AddOrCutEnum.ADD, this.foodItem)
+      })
     }
   }
 }
