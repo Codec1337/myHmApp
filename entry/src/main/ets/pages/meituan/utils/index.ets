@@ -32,6 +32,7 @@ export class CartStore {
 
     }
 
+    // appStorage持久化时针对复杂数据类型，地址未变化，不会去持久化
     AppStorage.set(USER_CART, [ ...userCart ])
     getContext().eventHub.emit(USER_CART_CHANGE)
 
