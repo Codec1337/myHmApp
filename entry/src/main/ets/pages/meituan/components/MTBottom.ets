@@ -1,3 +1,5 @@
+import { FoodItemModel } from '../models/MTModelIndex'
+
 @Preview
 @Component
 struct MTBottomCase {
@@ -5,11 +7,26 @@ struct MTBottomCase {
   @Consume
   showCart: boolean
 
+  @Consume
+  userCart: FoodItemModel[]
+
+  getTotalCount() {
+    return this.userCart.reduce((acc: number, item: FoodItemModel) => {
+      return acc + item.count
+    }, 0)
+  }
+
+  getTotalPrice() {
+    return this.userCart.reduce((acc: number, item: FoodItemModel) => {
+      return acc + item.count * item.price
+    }, 0)
+  }
+
   build() {
     Row() {
       Row() {
         Badge({
-          value: "0",
+          value: this.getTotalCount().toString(),
           style: {
             badgeSize: 20,
             badgeColor: '#FA2A2D'
@@ -31,7 +48,7 @@ struct MTBottomCase {
         Column() {
           Text() {
             Span("￥")
-            Span("0.00")
+            Span(this.getTotalPrice().toString())
               .fontSize(24)
           }.fontColor($r("app.color.white"))
           Text() {
