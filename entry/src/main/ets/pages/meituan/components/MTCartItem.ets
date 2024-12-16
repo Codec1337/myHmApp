@@ -1,8 +1,12 @@
+import { FoodItemModel } from '../models/MTModelIndex'
 import MTAddOrCut from './MTAddOrCut'
 
 @Preview
 @Component
 struct MTCartItem {
+
+  item: FoodItemModel = new FoodItemModel()
+
   build() {
     Row() {
       Image($r("app.media.food_item"))
@@ -10,7 +14,7 @@ struct MTCartItem {
         .aspectRatio(1)
         .borderRadius(8)
       Column({ space: 6 }) {
-        Text("小份酸汤鱼额小份酸汤鱼额小份酸汤鱼额小份酸汤鱼额")
+        Text(this.item.name)
           .maxLines(1)
           .textOverflow({
             overflow: TextOverflow.Ellipsis
@@ -21,12 +25,12 @@ struct MTCartItem {
             Span("￥")
               .fontSize(10)
               .fontColor($r("app.color.font_main_color"))
-            Span("34.23")
+            Span(this.item.price.toString())
               .fontSize(18)
               .fontWeight(FontWeight.Bold)
               .fontColor($r("app.color.font_main_color"))
           }
-          MTAddOrCut()
+          MTAddOrCut({ fid: this.item.id, foodItem: this.item })
         }.width("100%")
         .justifyContent(FlexAlign.SpaceBetween)
       }.layoutWeight(1)

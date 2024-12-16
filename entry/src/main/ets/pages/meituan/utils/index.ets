@@ -26,6 +26,9 @@ export class CartStore {
     } else if(type === AddOrCutEnum.CUT) {
       if (food && food.count > 0) {
         food.count -= 1
+        if (food.count === 0) {
+          userCart.splice(foodIndex, 1)
+        }
       } else {
         userCart.splice(foodIndex, 1)
       }
@@ -36,6 +39,11 @@ export class CartStore {
     AppStorage.set(USER_CART, [ ...userCart ])
     getContext().eventHub.emit(USER_CART_CHANGE)
 
+  }
+
+  static clearUserCart() {
+    AppStorage.set(USER_CART, [])
+    getContext().eventHub.emit(USER_CART_CHANGE)
   }
 }
 

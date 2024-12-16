@@ -1,8 +1,14 @@
+import { FoodItemModel } from '../models/MTModelIndex'
+import { CartStore } from '../utils'
 import MTCartItem from './MTCartItem'
 
 @Preview
 @Component
 struct MTCart {
+
+  @Consume
+  userCart: FoodItemModel[]
+
   build() {
     Column() {
       Column() {
@@ -12,16 +18,19 @@ struct MTCart {
           Text("清空购物车")
             .fontSize(12)
             .fontColor($r("app.color.search_font_color"))
+            .onClick(() => {
+              CartStore.clearUserCart()
+            })
         }.height(50)
         .justifyContent(FlexAlign.SpaceBetween)
         .width("100%")
 
         List({ space: 10 }) {
-          ForEach(new Array(7).fill(1), () => {
+          ForEach(this.userCart, (item: FoodItemModel) => {
             ListItem() {
-              MTCartItem()
+              MTCartItem({ item })
             }
-          })
+          }, (item: FoodItemModel) => item.id.toString())
         }.width("100%")
 
       }.width("100%")
