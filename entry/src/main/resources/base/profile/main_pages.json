@@ -34,6 +34,7 @@
     "pages/08/preferencesCase/PreferencesLoginCase",
     "pages/08/preferencesCase/PerferencesHomeCase",
     "pages/08/HttpCase",
-    "pages/meituan/MTIndex"
+    "pages/meituan/MTIndex",
+    "pages/09/RouterModuleCase"
   ]
 }
