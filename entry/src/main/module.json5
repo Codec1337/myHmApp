@@ -12,9 +12,11 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
-    "requestPermissions": [{
-      "name": "ohos.permission.INTERNET"
-    }],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ],
     "abilities": [
       {
         "name": "EntryAbility",
@@ -35,6 +37,15 @@
             ]
           }
         ]
+      },
+      {
+        "name": "PayEntryAbility",
+        "srcEntry": "./ets/payentryability/PayEntryAbility.ets",
+        "description": "$string:PayEntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:PayEntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
       }
     ]
   }

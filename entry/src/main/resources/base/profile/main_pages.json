@@ -37,6 +37,8 @@
     "pages/meituan/MTIndex",
     "pages/09/RouterModuleCase",
     "pages/09/RouterPageA",
-    "pages/09/RouterPageB"
+    "pages/09/RouterPageB",
+    "pages/10/ChatPageCase",
+    "pages/10/PayPageCase"
   ]
 }

@@ -1,22 +1,31 @@
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
-import { PreferencesManager } from '../pages/08/preferencesCase/hooks/perferencesManage';
 
-export default class EntryAbility extends UIAbility {
+export default class PayEntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    console.log("want")
+    if (want.parameters?.["orderId"]) {
+      AppStorage.setOrCreate("order_id", want.parameters?.["orderId"])
+    }
   }
 
   onDestroy(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    if (want.parameters?.["orderId"]) {
+      AppStorage.setOrCreate("order_id", want.parameters?.["orderId"])
+    }
+  }
+
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/10/ChatPageCase', (err) => {
+    windowStage.loadContent('pages/10/PayPageCase', (err) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
