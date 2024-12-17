@@ -1,4 +1,5 @@
 import { router } from '@kit.ArkUI';
+import("@ohos/demo/src/main/ets/pages/Index")
 
 @Entry
 @Component
@@ -12,6 +13,12 @@ struct RouterModuleCase {
           .onClick(() => {
             router.pushUrl({
               url: "@bundle:com.example.myhmapp/library/ets/pages/Index"
+            })
+          })
+        Button(this.message + "-name方式")
+          .onClick(() => {
+            router.pushNamedRoute({
+              name: "shared_pay_index"
             })
           })
       }

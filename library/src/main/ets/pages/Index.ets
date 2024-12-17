@@ -1,6 +1,6 @@
-@Entry
+@Entry({ routeName: "shared_pay_index" })
 @Component
-struct Index {
+export struct Index {
   @State message: string = '支付页面';
 
   build() {
