@@ -39,6 +39,7 @@
     "pages/09/RouterPageA",
     "pages/09/RouterPageB",
     "pages/10/ChatPageCase",
-    "pages/10/PayPageCase"
+    "pages/10/PayPageCase",
+    "pages/10/ImageAnimateCase"
   ]
 }
