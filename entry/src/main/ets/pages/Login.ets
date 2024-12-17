@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct Login {
+export struct Login {
   @State message: string = 'Hello World';
 
   build() {

@@ -1,4 +1,5 @@
 import { router } from '@kit.ArkUI';
+import { Login } from "../Login"
 import("@ohos/demo/src/main/ets/pages/Index")
 
 @Entry
@@ -9,6 +10,7 @@ struct RouterModuleCase {
   build() {
     Row() {
       Column() {
+        Login()
         Button(this.message)
           .onClick(() => {
             router.pushUrl({
