@@ -36,6 +36,11 @@ struct RouterPageB {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            router.pushUrl({
+              url: "pages/09/RouterPageA"
+            })
+          })
       }
       .width('100%')
     }
