@@ -41,6 +41,7 @@
     "pages/10/ChatPageCase",
     "pages/10/PayPageCase",
     "pages/10/ImageAnimateCase",
-    "pages/11/GestureCase"
+    "pages/11/GestureCase",
+    "pages/11/DownloadFileCase"
   ]
 }
